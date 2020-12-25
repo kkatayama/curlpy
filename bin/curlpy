@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+import subprocess
+import argparse
+import os
+
+
+def convertCurl(curl):
+    src = '/Users/katayama/Documents/Fun/NodeJS/Convert_Curl_to_Python/curl_to_python.js'
+    cmd = '{} --curl "{}"'.format(src, curl)
+    out = subprocess.check_output(cmd, shell=True).decode('utf-8')
+    return out
+
+
+if __name__ == '__main__':
+    ap = argparse.ArgumentParser()
+    ap.add_argument('curl_cmd', help='the curl command to convert into python syntax')
+    ap.add_argument('-o', '--output', default=False, help='save output to file')
+    args = ap.parse_args()
+
+    curl_cmd = args.curl_cmd
+    out_file = args.output
+
+    py_src = convertCurl(curl_cmd)
+    if not out_file:
+        print(py_src)
+    else:
+        with open(os.path.abspath(out_file), 'w') as f:
+            f.write(py_src)
