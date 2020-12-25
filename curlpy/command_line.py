@@ -1,15 +1,7 @@
 #!/usr/bin/env python3
-import subprocess
+from . import convertCurl
 import argparse
 import os
-
-
-def convertCurl(curl):
-    src = '/Users/katayama/Documents/Fun/NodeJS/Convert_Curl_to_Python/curl_to_python.js'
-    cmd = '{} --curl "{}"'.format(src, curl)
-    out = subprocess.check_output(cmd, shell=True).decode('utf-8')
-    return out
-
 
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()

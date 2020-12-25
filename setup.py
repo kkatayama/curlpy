@@ -16,5 +16,8 @@ setup(name='curlpy',
       license='MIT',
       packages=['curlpy'],
       python_requires='>=3',
-      scripts=['bin/curlpy'],
+      entry_points={
+          'console_scripts': ['curl-py=curlpy.command_line:main'],
+      },
+      include_package_data=True,
       zip_safe=False)
