@@ -3,7 +3,8 @@ from . import convertCurl
 import argparse
 import os
 
-if __name__ == '__main__':
+
+def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('curl_cmd', help='the curl command to convert into python syntax')
     ap.add_argument('-o', '--output', default=False, help='save output to file')
@@ -18,3 +19,7 @@ if __name__ == '__main__':
     else:
         with open(os.path.abspath(out_file), 'w') as f:
             f.write(py_src)
+
+
+if __name__ == '__main__':
+    main()

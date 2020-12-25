@@ -10,7 +10,7 @@ setup(name='curlpy',
       packages=['curlpy'],
       python_requires='>=3',
       entry_points={
-          'console_scripts': ['curl-py=curlpy.command_line'],
+          'console_scripts': ['curl-py=curlpy.command_line:main'],
       },
       include_package_data=True,
       zip_safe=False)
