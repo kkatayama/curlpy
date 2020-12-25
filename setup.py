@@ -1,10 +1,3 @@
-"""
-A Better HomeBrew Package Search
-
-Usage: brewls [keyword]
-
-"""
-
 from setuptools import setup
 
 setup(name='curlpy',
@@ -17,7 +10,7 @@ setup(name='curlpy',
       packages=['curlpy'],
       python_requires='>=3',
       entry_points={
-          'console_scripts': ['curl-py=curlpy.command_line:main'],
+          'console_scripts': ['curl-py=curlpy.command_line'],
       },
       include_package_data=True,
       zip_safe=False)
