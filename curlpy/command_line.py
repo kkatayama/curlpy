@@ -10,8 +10,10 @@ def main():
     ap.add_argument('-o', '--output', default=False, help='save output to file')
     args = ap.parse_args()
 
-    curl_cmd = args.curl_cmd
     out_file = args.output
+    curl_cmd = args.curl_cmd
+    if curl_cmd[0] == "'":
+        curl_cmd = curl_cmd.replace('"', '\\"').replace("'", '"')
 
     py_src = convertCurl(curl_cmd)
     if not out_file:
