@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='curlpy',
-      version='0.13',
+      version='0.14',
       description='A python wrapper for curlconverter',
       url='http://github.com/kkatayama/curlpy',
       author='Teddy',
