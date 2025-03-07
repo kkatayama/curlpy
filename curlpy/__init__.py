@@ -12,7 +12,7 @@ def convertCurl(curl, verbose):
         print(f'cmd = {cmd}')
 
     #out = subprocess.check_output(cmd, shell=True).decode('utf-8')
-    out = subprocess.run([src,'--curl', curl], shell=True, capture_output=True, text=True).stdout
+    out = subprocess.run([src, '--curl', curl], capture_output=True, text=True).stdout
     return out
 
 
