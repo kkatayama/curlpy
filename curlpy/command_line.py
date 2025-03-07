@@ -16,8 +16,8 @@ def main():
     out_file = args.output
     curl_cmd = ''.join(args.curl_cmd) if len(args.curl_cmd) == 1 else ' '.join(args.curl_cmd)
     # curl_cmd = args.curl_cmd
-    # if curl_cmd[0] == "'":
-    #     curl_cmd = curl_cmd.replace('"', '\\"').replace("'", '"')
+    if curl_cmd[0] == "'":
+        curl_cmd = curl_cmd.replace('"', '\\"').replace("'", '"')
 
     py_src = convertCurl(curl_cmd, verbose)
     if not out_file:
